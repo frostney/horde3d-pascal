@@ -199,8 +199,19 @@ begin
   end;
 
   // Initialize application and engine
+  {$IFDEF DARWIN}
+    // Application bundle checking
+    if DirectoryExists('../Resources') then //< Most likely app bundle
+      app := CApplication.Create(AnsiString(ExtractFilePath(ParamStr(0)))
+      + '../Resources')
+    else
+      app := CApplication.Create(AnsiString(ExtractFilePath(ParamStr(0)))
+      + '../Content');
+  {$ELSE}
   app := CApplication.Create(AnsiString(ExtractFilePath(ParamStr(0)))
       + '../Content');
+  {$ENDIF}
+
   if not app.init then
   begin
     // Fake message box

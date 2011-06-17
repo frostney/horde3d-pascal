@@ -35,6 +35,11 @@
 
 {$IFDEF LINK_STATIC}
   {$LINK libglfw.a}
+
+  {$IFDEF DARWIN}
+    {$LINKFRAMEWORK Cocoa}
+    {$LINKFRAMEWORK OpenGL}
+  {$ENDIF}
 {$ENDIF}
 
 

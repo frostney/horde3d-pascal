@@ -5,7 +5,11 @@ interface
 uses
   SysUtils,
   Horde3D,
-  Horde3DUtils;
+  Horde3DUtils
+  {$IFDEF DARWIN} //< On Mac OS X, you need to initalize OpenGL before initializing Horde3D (dglOpenGL.pas is not stable on Mac OS X)
+  ,GL, GLU
+  {$ENDIF}
+  ;
 
 type
   CApplication = class
@@ -86,7 +90,7 @@ begin
   // Initialize engine
   if not h3dInit then
   begin
-    h3dutDumpMessages;
+    //h3dutDumpMessages;
     Exit;
   end;
 
