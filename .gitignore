@@ -47,3 +47,5 @@ Bin/*.html
 Bin/*.a
 Bin/*.dbg
 Bin/*.or
+Bin/KnightPas
+Bin/ChicagoPas
