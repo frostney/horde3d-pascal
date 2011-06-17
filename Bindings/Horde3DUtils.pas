@@ -15,15 +15,15 @@
 // 
 // Pascal bindings by Johannes Stein (https://github.com/Stoney-FD/horde3d-pascal)
 // 		Special thanks to Srki_82 (who made Pascal bindings for Horde3D Version 1.0 Beta4),
-//		the Horde3D development and the university of Augsburg
+//		the Horde3D development team and the university of Augsburg
 //
 //
 
 unit Horde3DUtils;
 
-{$MINENUMSIZE 4}
-
 interface
+
+{$I Horde3D.inc}
 
 uses
   Horde3D;
@@ -33,9 +33,15 @@ const
     {$IFDEF DARWIN}
 	  Horde3DUtilsLib = 'Horde3DUtils';
 	  
-	  {$LINKFRAMEWORK HORDE3DUTILS}
+	  {$IFDEF AUTO_LINK}
+	    {$LINKFRAMEWORK Horde3DUtils}
+	  {$ENDIF}
 	{$ELSE}
 	  Horde3DUtilsLib = 'libHorde3DUtils.so';
+	  
+	  {$IFDEF AUTO_LINK}
+	    {$LINKLIB Horde3DUtils}
+	  {$ENDIF}
 	{$ENDIF}
   {$ELSE}
     Horde3DUtilsLib = 'Horde3DUtils.dll';

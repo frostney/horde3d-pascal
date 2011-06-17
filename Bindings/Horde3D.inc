@@ -1,8 +1,22 @@
+// Automatically links against libraries
+{$DEFINE AUTO_LINK}
+
+{$IFDEF FPC}
+  {$MODE DELPHI}
+{$ENDIF}
+
+{$MINENUMSIZE 4}
+
+
 {$IFDEF MSWINDOWS}
   {$DEFINE WINDOWS}
 {$ENDIF}
 
 {$IFDEF WIN32}
+  {$DEFINE WINDOWS}
+{$ENDIF}
+
+{$IFDEF WIN64}
   {$DEFINE WINDOWS}
 {$ENDIF}
 

@@ -4,6 +4,26 @@ program KnightPas;
   {$MODE DELPHI}
 {$ENDIF}
 
+{$IFDEF MSWINDOWS}
+  {$DEFINE WINDOWS}
+{$ENDIF}
+
+{$IFDEF WIN32}
+  {$DEFINE WINDOWS}
+{$ENDIF}
+
+{$IFDEF WIN64}
+  {$DEFINE WINDOWS}
+{$ENDIF}
+
+{$IFDEF WIN}
+  {$DEFINE WINDOWS}
+{$ENDIF}
+
+{$IFDEF WINDOWS}
+  {$APPTYPE GUI}
+{$ENDIF}
+
 uses
   SysUtils,
   Horde3D,
@@ -29,13 +49,13 @@ var
   mx0, my0: Integer;
   app: CApplication;
 
-function windowCloseListener: Integer; {$IFDEF UNIX} cdecl; {$ELSE} stdcall; {$ENDIF}
+function windowCloseListener: Integer; {$IFDEF WINDOWS} stdcall; {$ELSE} cdecl; {$ENDIF}
 begin
   running := false;
   Result := 0;
 end;
 
-procedure keyPressListener(key, action: Integer); {$IFDEF UNIX} cdecl; {$ELSE} stdcall; {$ENDIF}
+procedure keyPressListener(key, action: Integer); {$IFDEF WINDOWS} stdcall; {$ELSE} cdecl; {$ENDIF}
 var
   width, height: Integer;
   mode: GLFWvidmode;
@@ -110,7 +130,7 @@ begin
     app.keyStateChange(key, action = GLFW_PRESS);
 end;
 
-procedure mouseMoveListener(x, y: Integer); {$IFDEF UNIX} cdecl; {$ELSE} stdcall; {$ENDIF}
+procedure mouseMoveListener(x, y: Integer); {$IFDEF WINDOWS} stdcall; {$ELSE} cdecl; {$ENDIF}
 begin
   if not running then
   begin

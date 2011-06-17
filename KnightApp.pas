@@ -366,8 +366,6 @@ begin
   h3dSetNodeParamI( _cam, Integer(H3DCamera_ViewportWidthI), width );
   h3dSetNodeParamI( _cam, Integer(H3DCamera_ViewportHeightI), height );
 
-  WriteLn(Integer(H3DCamera_ViewportXI));
-
   // Set virtual camera parameters
   h3dSetupCameraView( _cam, 45.0, width / height, 0.1, 1000.0 );
   h3dResizePipelineBuffers( _hdrPipeRes, width, height );
