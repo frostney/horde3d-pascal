@@ -90,7 +90,7 @@ begin
   // Initialize engine
   if not h3dInit then
   begin
-    //h3dutDumpMessages;
+    h3dutDumpMessages;
     Exit;
   end;
 
