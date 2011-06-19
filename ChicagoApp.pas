@@ -243,7 +243,6 @@ end;
 
 procedure CApplication.mainLoop(fps: Single);
 var
-  cnt, I: Integer;
   ww: Single;
   ovLogo: array[0..15] of Single;
 begin

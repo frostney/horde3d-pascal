@@ -1,0 +1,5 @@
+Known bugs:
+
+- Using h3dutShowFrameStats gives an access violation
+- Chicago Demo Mac OS X Intel 64-bit executable with graphical glitches and unusably slow
+- Chicago Demo Mac OS X PowerPC 32-bit executable with graphical glitches and unusably slow

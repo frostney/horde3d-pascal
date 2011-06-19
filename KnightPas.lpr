@@ -192,7 +192,7 @@ begin
 
   // Check if benchmark mode is requested
   benchmark := false;
-  if (ParamCount > 1) and (ParamStr(1) = '-bm') then
+  if (ParamCount > 0) and (ParamStr(1) = '-bm') then
   begin
     benchmark := True;
     glfwDisable(GLFW_AUTO_POLL_EVENTS);
