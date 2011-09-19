@@ -178,7 +178,7 @@ var
   title: AnsiString;
   i: Integer;
 
-{$R *.res}
+//{$R *.res}
 
 begin
   // Initialize GLFW

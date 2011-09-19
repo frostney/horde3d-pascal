@@ -182,7 +182,7 @@ var
   avgFPS: Double;
   title: AnsiString;
 
-{$R *.res}
+//{$R *.res}
 
 begin
   // Initialize GLFW
